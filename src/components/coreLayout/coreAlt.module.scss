@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+$mainTextColor: #222;
+$bodyFontFamily: "times new roman", serif;
+$headerFontFamily: 'Playball', cursive;
+$fullMaxWidth: calc(100vw - 320px);
+$maxColWidth: 80%;
+$bodyFontSize: 24px;
+
+@keyframes pulse {
+  0% {
+    color: #001F3F;
+  }
+  50% {
+    color: #FF4136;
+  }
+  100% {
+    color: #001F3F;
+  }
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9f/Bluets_%28Houstonia_caerulea%29_Hedyotis_caerulea.jpg');
+  width: 1000px;
+  // margin: 0 auto;
+}
+
+.container {
+  max-width: $fullMaxWidth;
+  width: 100%;
+  margin: 20px 0 20px 240px;
+  color: $mainTextColor;
+
+  > ul {
+    position: fixed !important;
+    top: 10px;
+    left: 20px;
+    display: block;
+    width: 200px;
+
+    li {
+      background-color: rgb(205, 120, 50);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+  }
+
+  h1,
+  h2 {
+    font-family: $headerFontFamily;
+    text-align: center;
+    font-weight: 700;
+    font-size: 72px;
+    animation: pulse 5s infinite;
+
+    a {
+      text-decoration: none;
+      color: $mainTextColor;
+      animation: pulse 5s infinite;
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 48px;
+  }
+
+  section {
+    margin: 50px 0;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+
+    p,
+    ul,
+    time,
+    h2,
+    h3,
+    footer {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: $maxColWidth;
+    }
+
+    a {
+      color: #3f51b5;
+    }
+
+    .columnImage {
+      margin: 3em 0;
+    }
+
+    .postPromo {
+      background: #e8e8e8;
+      padding: 15px 20px;
+      text-align: center;
+      border-radius: 4px;
+      a {
+        text-decoration: none;
+        color: $mainTextColor;
+      }
+    }
+  }
+
+  h3 {
+    font-family: $headerFontFamily;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  section header {
+    font-family: $headerFontFamily;
+    font-weight: 700;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  p,
+  li {
+    font-family: $bodyFontFamily;
+    font-size: $bodyFontSize;
+  }
+
+  p strong {
+    font-weight: 700;
+  }
+
+  .siteFooter {
+    margin-top: 100px;
+    font-family: $bodyFontFamily;
+  }
+
+  hr {
+    width: 50%;
+    height: 1px;
+    background-color: #000;
+    border: none;
+  }
+
+  .footerQuote {
+    figcaption,
+    blockquote p {
+      max-width: $maxColWidth;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    figcaption {
+      text-align: right;
+    }
+
+    blockquote p {
+      text-indent: -.3em;
+        &:before{
+          content: "“";
+        }
+    }
+
+    figcaption::before {
+      content: "—";
+    }
+  }
+
+  blockquote {
+    p {
+      padding-left: 30px;
+      padding-right: 20px;
+
+      &:first-child {
+        text-indent: -.3em;
+        &:before{
+          content: "“";
+        }
+      }
+
+      &:last-child:after{
+          content: "”";
+        }
+    }
+
+    & + p {
+      padding-right: 20px;
+      text-align: right;
+    }
+
+    & + p:before {
+      content: "—";
+    }
+  }
+
+}

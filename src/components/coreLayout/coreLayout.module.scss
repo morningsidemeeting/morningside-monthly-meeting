@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap");
+@import "./../../shared/vars.scss";
+
+.container {
+  max-width: $fullMaxWidth;
+  width: 90vw;
+  margin: 20px auto;
+  color: $mainTextColor;
+
+  h1,
+  h2 {
+    font-family: $headerFontFamily;
+    text-align: center;
+    font-weight: 700;
+    font-size: 36px;
+
+    a {
+      text-decoration: none;
+      color: $mainTextColor;
+    }
+  }
+
+  h2 {
+    font-weight: 400;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 24px;
+  }
+
+  section {
+    margin: 50px 0;
+
+    &:first-child h2 {
+      margin-top: -20px;
+    }
+
+    p,
+    ul,
+    ol,
+    time,
+    h2,
+    h3,
+    form,
+    footer,
+    table {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: $maxColWidth;
+    }
+
+    a {
+      color: #3f51b5;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .columnImage {
+      margin: 3em 0;
+    }
+  }
+
+  h3 {
+    font-family: $headerFontFamily;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  section header {
+    font-family: $headerFontFamily;
+    font-weight: 700;
+    font-size: 18px;
+    font-style: italic;
+  }
+
+  p,
+  li,
+  th,
+  td,
+  label,
+  input {
+    font-family: $bodyFontFamily;
+    font-size: $bodyFontSize;
+  }
+
+  p strong {
+    font-weight: 700;
+  }
+
+  hr {
+    width: 40%;
+    height: 1px;
+    background-color: #000;
+    border: none;
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+  blockquote {
+    p {
+      padding-left: 30px;
+      padding-right: 20px;
+
+      &:first-child {
+        text-indent: -0.3em;
+        &:before {
+          content: "“";
+        }
+      }
+
+      &:last-child:after {
+        content: "”";
+      }
+    }
+
+    & + p {
+      padding-right: 20px;
+      text-align: right;
+    }
+
+    & + p:before {
+      content: "—";
+    }
+  }
+}

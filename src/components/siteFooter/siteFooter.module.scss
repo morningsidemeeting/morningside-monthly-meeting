@@ -1,0 +1,48 @@
+@import './../../shared/vars.scss';
+
+.siteFooter {
+  margin-top: 100px;
+  font-family: $bodyFontFamily;
+
+  hr {
+    margin-top: 0;
+    margin-bottom: 2em;
+    width: $maxColWidth;
+  }
+
+  .copyright {
+    text-align: center;
+    font-style: italic;
+    font-size: 14px;
+  }
+}
+
+.footerQuote {
+  margin-bottom: 2em;
+
+  blockquote{
+    margin: 0;
+  }
+  figcaption,
+  blockquote p {
+    font-size: $footerFontSize;
+    max-width: $maxColWidth - 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  figcaption {
+    text-align: right;
+  }
+
+  blockquote p {
+    text-indent: -.3em;
+      &:before{
+        content: "“";
+      }
+  }
+
+  figcaption::before {
+    content: "—";
+  }
+}
