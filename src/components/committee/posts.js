@@ -18,7 +18,13 @@ export default function CommitteePostsPage({ title, basePath, tag }) {
     <StaticQuery
       query={graphql`
         {
-          allMdx(limit: 100) {
+          allMdx(
+            limit: 100
+            sort: { frontmatter: { date: DESC } }
+            filter: {
+              frontmatter: { tags: { in: "committees", nin: "archived" } }
+            }
+          ) {
             nodes {
               frontmatter {
                 title
