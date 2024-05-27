@@ -6,23 +6,19 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import * as Styles from "./posts.module.scss";
 import BLOG_TAGS from "../../shared/blogTags";
 
-export const Post = ({
-  title = "untitled",
-  body = "",
-  tags = [],
-  linkTitle = true,
-  date,
-  slug,
-  withTags,
-}) => {
-  const footer = withTags ? (
-    <footer>
-      {tags
-        .map((t) => BLOG_TAGS[t])
-        .filter((n) => !!n)
-        .join(", ")}
-    </footer>
-  ) : null;
+export const Post = (
+  { frontmatter = {}, body = "", linkTitle = true, withTags },
+  children
+) => {
+  const { title = "untitled", tags = [], date, slug } = frontmatter;
+  // const footer = withTags ? (
+  //   <footer>
+  //     {tags
+  //       .map((t) => BLOG_TAGS[t])
+  //       .filter((n) => !!n)
+  //       .join(", ")}
+  //   </footer>
+  // ) : null;
   let parsedDate = date;
   try {
     // if it looks like a time was not specified, shift from GMT to EST
@@ -34,10 +30,15 @@ export const Post = ({
   return (
     <div className={Styles.post}>
       {title ? <h3>{linkTitle ? <a href={slug}>{title}</a> : title}</h3> : null}
-      {parsedDate ? <time dateTime={date}>{parsedDate}</time> : null}
-      <MDXRenderer>{body}</MDXRenderer>
-      {footer}
+      {date ? <time dateTime={date}>{date}</time> : null}
+      {body}
     </div>
+    // <div className={Styles.post}>
+    //   {title ? <h3>{linkTitle ? <a href={slug}>{title}</a> : title}</h3> : null}
+    //   {parsedDate ? <time dateTime={date}>{parsedDate}</time> : null}
+    //   <MDXRenderer>{body}</MDXRenderer>
+    //   {footer}
+    // </div>
   );
 };
 
