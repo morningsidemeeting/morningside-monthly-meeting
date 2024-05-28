@@ -19,14 +19,7 @@ export const Post = (
   //       .join(", ")}
   //   </footer>
   // ) : null;
-  let parsedDate = date;
-  try {
-    // if it looks like a time was not specified, shift from GMT to EST
-    const ESTDate = date.replace("T00:00:00.000Z", "T05:00:00.000Z");
-    parsedDate = format(parseISO(ESTDate), "MMMM d, y");
-  } catch (e) {
-    // there is either NO date, or date is already a formatted string.
-  }
+
   return (
     <div className={Styles.post}>
       {title ? <h3>{linkTitle ? <a href={slug}>{title}</a> : title}</h3> : null}
