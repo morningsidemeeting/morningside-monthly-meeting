@@ -1,6 +1,6 @@
 ---
 title: Life After COVID Worship in our Cemetery
-date: 2023-05-28
+date: "2023-05-28"
 tags: [board]
 ---
 

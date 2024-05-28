@@ -1,6 +1,6 @@
 ---
 title: An Urgent Call to the Religious Society of Friends, May 2022
-date: 2022-09-07
+date: "2022-09-07"
 tags: [board, communications]
 ---
 

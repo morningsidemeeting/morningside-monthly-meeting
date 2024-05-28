@@ -1,6 +1,6 @@
 ---
 title: Memorial Service for Patricia Chernoff
-date: 2021-11-28
+date: "2021-11-28"
 tags: [ministry-and-counsel]
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Announcements for Week of September 19-25, 2022
-date: 2022-09-25
+date: "2022-09-25"
 tags: [announcements]
 ---
 
