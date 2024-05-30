@@ -35,12 +35,14 @@ export const Post = (
   );
 };
 
-const Posts = ({ nodes = [], withTags = false }) => (
-  <Fragment>
-    {nodes.map((props) => (
-      <Post key={props.id} {...Object.assign({}, props, { withTags })} />
-    ))}
-  </Fragment>
-);
+const Posts = ({ nodes = [], withTags = false }, children) => {
+  return (
+    <Fragment>
+      {nodes.map((props) => (
+        <Post key={props.id} {...Object.assign({}, props, { withTags })} />
+      ))}
+    </Fragment>
+  );
+};
 
 export default Posts;
