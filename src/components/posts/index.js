@@ -1,5 +1,4 @@
-import React, { Fragment } from "react";
-import { Link } from "gatsby";
+import React from "react";
 import slugify from "@sindresorhus/slugify";
 import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
@@ -9,7 +8,7 @@ import BLOG_TAGS from "../../shared/blogTags";
 export const SinglePost = (props) => {
   const { title, date, tags, body, id, children, linkTitle = false } = props;
   return (
-    <div className={Styles.post}>
+    <div className={Styles.post} key={`post-${id}`}>
       {title ? (
         <h3>
           {linkTitle ? <a href={`/posts/${slugify(title)}`}>{title}</a> : title}

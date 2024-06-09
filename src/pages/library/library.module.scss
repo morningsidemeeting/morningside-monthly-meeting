@@ -1,0 +1,150 @@
+@import "./../../shared/vars.scss";
+
+$fieldpadding: 5px 10px;
+
+.searchForm {
+  grid-template-columns: 80px auto 90px 90px;
+  row-gap: 20px;
+  column-gap: 10px;
+  display: grid;
+  header {
+    padding-top: 3px;
+    grid-column: 1;
+    &.searchHead {
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    &.filterHead {
+      grid-row: 3;
+    }
+  }
+}
+
+.fieldCol2 {
+ grid-column: 2;
+}
+
+.fieldCol3 {
+  grid-column: 3;
+}
+
+.fieldCol4 {
+  grid-column: 4;
+}
+
+label {
+  margin-right: 5px;
+}
+
+input {
+  &[type="text"],
+  &[type="submit"],
+  &[type="reset"] {
+    padding: $fieldpadding;
+  }
+}
+
+select {
+  padding: $fieldpadding;
+}
+
+.bookList {
+  margin: 0;
+  padding: 0;
+}
+
+.book,
+.descriptors,
+.filters {
+  list-style: none;
+}
+
+.descriptors,
+.filters {
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
+    strong,
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.descriptors {
+  margin-top: 0.3em;
+  color: $lightTextColor;
+}
+
+.book {
+  margin: 2em 0 0;
+  &:first-child {
+    margin-top: 1em;
+  }
+}
+
+.filters {
+  margin-top: 20px;
+}
+
+.filters li {
+  display: inline-block;
+  
+  &:hover {
+    cursor: pointer;
+  }
+  span {
+    padding: 5px 10px;
+    border: 1px solid #aaa;
+    &:first-of-type {
+      background-color: #ddd;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border-right: none;
+    }
+    &:last-of-type {
+      padding: 5px 10px;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-left: none;
+      &::after {
+        content: "x";
+        padding-left: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.title {
+  font-style: italic;
+  padding-bottom: .3em;
+}
+
+.author {
+  padding-bottom: .3em;
+}
+
+.category,
+.descriptors li {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.category:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.resultsCount {
+  margin: 1.5em 0 .5em;
+  font-weight: 700;
+}

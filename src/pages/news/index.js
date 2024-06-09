@@ -1,15 +1,15 @@
 import React, { Fragment } from "react";
 import CoreLayout from "../../components/coreLayout";
 import PostList from "../../components/posts";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import CallToAction from "../../components/callToAction";
-import SEO from "../../components/seo";
+import Seo from "../../components/seo";
 
 const NewsPage = ({ data }) => {
   console.log(data.allMdx.nodes);
   return (
     <CoreLayout withSubtitle={false}>
-      <SEO title="News" />
+      <Seo title="News" />
       <section>
         <CallToAction path="/news/share">
           Want to share news on the website? Please fill out our form.

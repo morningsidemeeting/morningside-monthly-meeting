@@ -1,7 +1,7 @@
 import React from "react";
 import CoreLayout from "../coreLayout";
 import Nav from "../nav";
-import SEO from "../seo";
+import Seo from "../seo";
 
 export default function CommitteePage({ title, basePath, children }) {
   const links = [
@@ -16,7 +16,7 @@ export default function CommitteePage({ title, basePath, children }) {
       <h2>{title}</h2>
       <Nav links={links} />
       <section>{children}</section>
-      <SEO title={title} />
+      <Seo title={title} />
     </CoreLayout>
   );
 }

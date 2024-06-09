@@ -1,6 +1,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const path = require(`path`);
 module.exports = {
   siteMetadata: {
     url: `https://morningsidemeeting.github.io/`,
@@ -25,6 +26,7 @@ module.exports = {
     "gatsby-plugin-image",
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-csv",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
@@ -47,6 +49,14 @@ module.exports = {
       options: {
         name: `posts`,
         path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: path.join(__dirname, `src`, `data`),
+        ignore: [`**/\.*`], // ignore files starting with a dot
       },
     },
   ],
