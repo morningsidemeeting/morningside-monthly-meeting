@@ -1,7 +1,7 @@
 import React from "react";
 import CoreLayout from "../../components/coreLayout";
 import SEO from "../../components/seo";
-import Styles from "./urgentcall.module.scss";
+import * as Styles from "./urgentcall.module.scss";
 
 const UrgentCallPage = () => (
   <CoreLayout withSubtitle={false}>
