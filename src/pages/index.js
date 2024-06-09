@@ -1,4 +1,5 @@
 import React from "react";
+import slugify from "@sindresorhus/slugify";
 import CoreLayout from "../components/coreLayout";
 import PostList from "../components/posts";
 import { graphql, Link } from "gatsby";
@@ -30,7 +31,9 @@ const HomePage = ({ data }) => {
         </p>
 
         {currentAnnouncement ? (
-          <CallToAction path={currentAnnouncement.slug}>
+          <CallToAction
+            path={`/posts/${slugify(currentAnnouncement.frontmatter.title)}`}
+          >
             Click here for{" "}
             <strong>{currentAnnouncement.frontmatter.title}</strong> or scroll
             to the bottom of this page.
