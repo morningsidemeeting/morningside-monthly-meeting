@@ -14,10 +14,10 @@ const NewsPage = ({ data }) => {
         <CallToAction path="/news/share">
           Want to share news on the website? Please fill out our form.
         </CallToAction>
+        <Fragment>
+          <PostList nodes={data.allMdx.nodes} />
+        </Fragment>
       </section>
-      <Fragment>
-        <PostList nodes={data.allMdx.nodes} />
-      </Fragment>
     </CoreLayout>
   );
 };

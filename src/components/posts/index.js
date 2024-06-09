@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import slugify from "@sindresorhus/slugify";
+import remarkGfm from "remark-gfm";
 import ReactMarkdown from "react-markdown";
 import * as Styles from "./posts.module.scss";
 import BLOG_TAGS from "../../shared/blogTags";
@@ -15,7 +16,11 @@ export const SinglePost = (props) => {
         </h3>
       ) : null}
       {date ? <time dateTime={date}>{date}</time> : null}
-      {children ? children : <ReactMarkdown children={body} />}
+      {children ? (
+        children
+      ) : (
+        <ReactMarkdown children={body} remarkPlugins={[remarkGfm]} />
+      )}
       <footer>
         {tags
           .map((t) => BLOG_TAGS[t])
