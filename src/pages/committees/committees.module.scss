@@ -1,0 +1,64 @@
+@import "./../../shared/vars.scss";
+
+.committeeList,
+.committeePages {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0.5em 0 0;
+    padding: 0;
+
+    strong,
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.committeeList li {
+  margin: 1em 0 0;
+  a {
+    font-weight: bold;
+  }
+  p {
+    margin-left: 1em;
+
+    &.nominees {
+      margin-left: 0;
+    }
+  }
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 40px;
+  tr.cmte td {
+    // border-top: 1px solid #ddd;
+    padding-top: 25px;
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 5px 0 5px 20px;
+    vertical-align: top;
+    &.cmte {
+      padding-left: 0;
+      width: 40%;
+      @include desktop() {
+        width: 50%;
+      }
+    }
+    &.ncp {
+      padding-left: 0;
+    }
+  }
+}

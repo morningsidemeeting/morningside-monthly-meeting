@@ -117,10 +117,6 @@ const LibraryPage = ({ data }) => {
     setSelectedCategory("");
   }
 
-  function deselectAuthor(e) {
-    setSelectedAuthor(null);
-  }
-
   function toggleSearchParam(e) {
     setSearchParams(
       [searchByAuthorCheck, searchByTitleCheck, searchByTagsCheck].map(
@@ -137,10 +133,10 @@ const LibraryPage = ({ data }) => {
   }
 
   const filteredResults = (searchResults || allBooks).filter((book, i) => {
-    const { Author, Title, majorCategory, subCategory, Descriptors } = book;
+    const { Author, majorCategory } = book;
     const isFiltered =
-      (selectedCategory && selectedCategory != majorCategory) ||
-      (selectedAuthor && selectedAuthor != Author);
+      (selectedCategory && selectedCategory !== majorCategory) ||
+      (selectedAuthor && selectedAuthor !== Author);
     return !isFiltered;
   });
 
