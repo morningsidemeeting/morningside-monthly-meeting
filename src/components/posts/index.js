@@ -6,6 +6,13 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import * as Styles from "./posts.module.scss";
 import BLOG_TAGS from "../../shared/blogTags";
 
+export const NewPost = (
+  { title, frontmatter = {}, body = "", linkTitle = true, withTags },
+  children
+) => {
+  return <div>Foo</div>;
+};
+
 export const Post = (
   { frontmatter = {}, body = "", linkTitle = true, withTags },
   children
