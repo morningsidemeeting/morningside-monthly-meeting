@@ -1,13 +1,15 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import CommitteePage from "./index";
-import Posts from "../posts";
+import PostList from "../posts";
 
 function CommitteePosts({ data, tag }) {
-  const nodes = data.allFile.nodes.filter((n) => n.tags.includes(tag));
+  const nodes = data.allMdx.nodes.filter((n) =>
+    n.frontmatter.tags.includes(tag)
+  );
 
   if (nodes.length) {
-    return <Posts nodes={nodes} title="Posts" />;
+    return <PostList nodes={nodes} title="Posts" />;
   } else {
     return <p>No posts found.</p>;
   }
