@@ -2,7 +2,7 @@ import React from "react";
 import CoreLayout from "../../components/coreLayout";
 import { graphql } from "gatsby";
 import * as Styles from "../../components/posts/posts.module.scss";
-import { Post, NewPost } from "../../components/posts";
+import { SinglePost } from "../../components/posts";
 import BLOG_TAGS from "../../shared/blogTags";
 
 const BlogPost = ({ data, children }) => {
@@ -10,17 +10,7 @@ const BlogPost = ({ data, children }) => {
   return (
     <CoreLayout withSubtitle={false}>
       <section>
-        <div className={Styles.post}>
-          <h3>{title}</h3>
-          {date ? <time dateTime={date}>{date}</time> : null}
-          {children}
-          <footer>
-            {tags
-              .map((t) => BLOG_TAGS[t])
-              .filter((n) => !!n)
-              .join(", ")}
-          </footer>
-        </div>
+        <SinglePost {...data.mdx.frontmatter}>{children}</SinglePost>
       </section>
     </CoreLayout>
   );

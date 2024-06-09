@@ -1,6 +1,6 @@
 import React from "react";
 import CoreLayout from "../components/coreLayout";
-import Posts from "../components/posts";
+import PostList from "../components/posts";
 import { graphql, Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { columnImage } from "../components/coreLayout/coreLayout.module.scss";
@@ -41,7 +41,7 @@ const HomePage = ({ data }) => {
           className={columnImage}
         />
         <hr />
-        <Posts nodes={announcements} />
+        <PostList nodes={announcements} />
       </section>
     </CoreLayout>
   );
@@ -56,6 +56,7 @@ export const query = graphql`
     ) {
       nodes {
         id
+        body
         frontmatter {
           title
           date(formatString: "MMMM d, y")

@@ -1,55 +1,38 @@
 import React, { Fragment } from "react";
-// import { Link } from "gatsby";
-import { format } from "date-fns";
-import { parseISO } from "date-fns/esm";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import { Link } from "gatsby";
+import slugify from "@sindresorhus/slugify";
+import ReactMarkdown from "react-markdown";
 import * as Styles from "./posts.module.scss";
 import BLOG_TAGS from "../../shared/blogTags";
 
-export const NewPost = (
-  { title, frontmatter = {}, body = "", linkTitle = true, withTags },
-  children
-) => {
-  return <div>Foo</div>;
-};
-
-export const Post = (
-  { frontmatter = {}, body = "", linkTitle = true, withTags },
-  children
-) => {
-  const { title = "untitled", tags = [], date, slug } = frontmatter;
-  // const footer = withTags ? (
-  //   <footer>
-  //     {tags
-  //       .map((t) => BLOG_TAGS[t])
-  //       .filter((n) => !!n)
-  //       .join(", ")}
-  //   </footer>
-  // ) : null;
-
+export const SinglePost = (props) => {
+  const { title, date, tags, body, id, children, linkTitle = false } = props;
   return (
     <div className={Styles.post}>
-      {title ? <h3>{linkTitle ? <a href={slug}>{title}</a> : title}</h3> : null}
+      {title ? (
+        <h3>
+          {linkTitle ? <a href={`/posts/${slugify(title)}`}>{title}</a> : title}
+        </h3>
+      ) : null}
       {date ? <time dateTime={date}>{date}</time> : null}
-      {body}
+      {children ? children : <ReactMarkdown children={body} />}
+      <footer>
+        {tags
+          .map((t) => BLOG_TAGS[t])
+          .filter((n) => !!n)
+          .join(", ")}
+      </footer>
     </div>
-    // <div className={Styles.post}>
-    //   {title ? <h3>{linkTitle ? <a href={slug}>{title}</a> : title}</h3> : null}
-    //   {parsedDate ? <time dateTime={date}>{parsedDate}</time> : null}
-    //   <MDXRenderer>{body}</MDXRenderer>
-    //   {footer}
-    // </div>
   );
 };
 
-const Posts = ({ nodes = [], withTags = false }, children) => {
-  return (
-    <Fragment>
-      {nodes.map((props) => (
-        <Post key={props.id} {...Object.assign({}, props, { withTags })} />
-      ))}
-    </Fragment>
-  );
+const PostList = ({ nodes }) => {
+  return nodes.map((data) => {
+    const { id, body, frontmatter } = data;
+    const { title, date, tags = [] } = frontmatter;
+    const props = { title, date, tags, body, id, linkTitle: true };
+    return <SinglePost {...props} />;
+  });
 };
 
-export default Posts;
+export default PostList;
