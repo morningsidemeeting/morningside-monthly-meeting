@@ -6,7 +6,6 @@ import CallToAction from "../../components/callToAction";
 import Seo from "../../components/seo";
 
 const NewsPage = ({ data }) => {
-  console.log(data.allMdx.nodes);
   return (
     <CoreLayout withSubtitle={false}>
       <Seo title="News" />
