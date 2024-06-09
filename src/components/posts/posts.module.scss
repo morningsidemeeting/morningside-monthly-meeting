@@ -1,0 +1,15 @@
+@import './../../shared/vars.scss';
+.post {
+  margin-bottom: 4em;
+  time {
+    font-family: $bodyFontFamily;
+    font-style: italic;
+    margin-top: -1em;
+    display: block;
+  }
+  footer {
+    font-family: $bodyFontFamily;
+    font-size: 12px;
+    font-style: italic;
+  }
+}

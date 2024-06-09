@@ -1,0 +1,22 @@
+@import './../../shared/vars.scss';
+
+.cta {
+  background: #e8e8e8;
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: 4px;
+  transition: background .5s ease-out;
+
+  &:hover {
+    background: #c8c8c8;
+  }
+
+  a {
+    text-decoration: none;
+    color: $mainTextColor !important;
+
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+}

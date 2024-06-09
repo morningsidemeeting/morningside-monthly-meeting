@@ -1,0 +1,30 @@
+.calendarMonth {
+  border-bottom: 1px solid #999;
+  padding-bottom: .5em;
+}
+
+.calendarEvents {
+  list-style: none;
+  padding: 0 0;
+  margin-bottom: 2em;
+
+  li {
+    margin-top: 2em;
+
+    header {
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    time,
+    time + span {
+      font-style: italic;
+      display: block;
+    }
+
+    footer {
+      font-size: 0.82em;
+      // font-style: italic;
+    }
+  }
+}
