@@ -21,7 +21,7 @@ export default function SiteFooter() {
         </figcaption>
       </figure>
       <p className={Styles.copyright}>
-        © 2021 Morningside Monthly Meeting, Religious Society of Friends.
+        © 2024 Morningside Monthly Meeting, Religious Society of Friends.
       </p>
     </footer>
   );
