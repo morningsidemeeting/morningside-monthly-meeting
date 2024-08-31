@@ -1,8 +1,9 @@
 import React from "react";
 import Committee from "../../components/committee";
-import { basePath, title } from "./config.json";
+import * as Config from "./config.json";
 
 export default function CommitteePage() {
+  const { title, basePath } = Config;
   return (
     <Committee title={title} basePath={basePath}>
       <p>
