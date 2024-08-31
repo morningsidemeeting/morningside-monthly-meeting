@@ -1,4 +1,5 @@
 export const BLOG_TAGS = {
+  announcement: "Announcements",
   announcements: "Announcements",
   arch: "ARCH",
   blog: "Blog Posts",

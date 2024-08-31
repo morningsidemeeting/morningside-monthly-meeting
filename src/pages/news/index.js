@@ -26,7 +26,11 @@ export const query = graphql`
     allMdx(
       limit: 10
       sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { tags: { nin: ["archived", "announcements"] } } }
+      filter: {
+        frontmatter: {
+          tags: { nin: ["archived", "announcements", "announcement"] }
+        }
+      }
     ) {
       nodes {
         id

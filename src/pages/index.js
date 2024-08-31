@@ -55,7 +55,7 @@ export const query = graphql`
     allMdx(
       limit: 1
       sort: { frontmatter: { date: DESC } }
-      filter: { frontmatter: { tags: { in: "announcements" } } }
+      filter: { frontmatter: { tags: { in: "announcement" } } }
     ) {
       nodes {
         id
