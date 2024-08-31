@@ -1,6 +1,7 @@
 import React from "react";
 import CommitteeEvents from "../../components/committee/events";
-import { basePath, title, calendarSlug } from "./config.json";
+import * as Config from "./config.json";
+const { basePath, title, calendarSlug } = Config;
 
 export default function CommitteeEventsPage() {
   return (
