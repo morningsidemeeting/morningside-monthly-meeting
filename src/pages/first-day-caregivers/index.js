@@ -8,10 +8,9 @@ export default function CommitteePage() {
     <Committee title={title} basePath={basePath}>
       <ul>
         <li>
-          During Meeting for Worship at least two caregivers, usually one paid
-          and one volunteer, are available to be with children who may attend.
-          They will also be available during Meeting for Worship with a Concern
-          for Business if requested.
+          During Meeting for Worship at least two caregivers are available to be
+          with children who may attend. They will also be available during
+          Meeting for Worship with a Concern for Business if requested.
         </li>
         <li>
           Caregivers and parents work together to consider policies, materials,
