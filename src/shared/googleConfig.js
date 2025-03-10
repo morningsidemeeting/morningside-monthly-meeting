@@ -21,7 +21,7 @@ export const CONTACT_DB_FORM_EMBEDDED_URL =
 export const CALENDAR_IDS = {
   main: "d1kb6t7loimf7b9ib89to5d2hs@group.calendar.google.com",
   psc: "dr4fmp2quj73h6i65ul5v53bco@group.calendar.google.com",
-  communications: "a6hc0gdimm88606pbt8n0he3eg@group.calendar.google.com",
+  // communications: "a6hc0gdimm88606pbt8n0he3eg@group.calendar.google.com",
   "ministry-and-counsel":
     "cd0tneir1trvqsv10flbcmsqig@group.calendar.google.com",
   nominating: "lm9ff1vd7sjuq1f49m5j19jmdo@group.calendar.google.com",
